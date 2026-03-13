@@ -1,0 +1,28 @@
+# Derived from:
+# https://github.com/SkyLabsAI/BRiCk/blob/main/rocq-lens/rocq-lens.opam
+opam-version: "2.0"
+synopsis: "Generation of lenses for record datatypes"
+maintainer: [
+  "Gregory Malecha <gregory@skylabs-ai.com>"
+  "Paolo Giarrusso <paolo@skylabs-ai.com>"
+]
+authors: [
+  "Gregory Malecha <gregory@skylabs-ai.com>"
+  "Paolo Giarrusso <paolo@skylabs-ai.com>"
+]
+license: "LGPL-2.1-or-later"
+homepage: "https://github.com/SkyLabsAI/BRiCk"
+bug-reports: "https://github.com/SkyLabsAI/BRiCk/issues"
+depends: [
+  "dune" {>= "3.21"}
+  "rocq-core"
+  "rocq-stdlib"
+  "odoc" {with-doc}
+]
+build: [["sh" "-c" "cd rocq-lens && dune build -p %{name}% -j %{jobs}%"]]
+install: [["sh" "-c" "cd rocq-lens && dune install -p %{name}%"]]
+dev-repo: "git+https://github.com/SkyLabsAI/BRiCk.git"
+x-maintenance-intent: ["(latest)"]
+url {
+  src: "git+https://github.com/SkyLabsAI/BRiCk.git#b79c734e4dfb3200edfc6d522eb8fa18efcb050b"
+}
